@@ -288,5 +288,3 @@ LV17:
 
 
     br x29 // retorno al main.
-
-

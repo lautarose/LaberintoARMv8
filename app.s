@@ -27,6 +27,21 @@ app:
 
 	bl drawMaze
 
+	// Llamar funcion drawChar //
+
+	  // Los parámetros deben ser pasados en registro:
+  	// x3 posicion del personaje en x.
+  	// x4 posicion del personaje en y.
+
+	// posicion inicial del personaje: X: 326 ; Y: 1
+
+	mov x3, 326 
+	mov x4, 1
+
+	bl drawChar
+
+	bl borrar_personaje
+
 	// --- Delay loop ---
 	movz x11, 0x10, lsl #16
 delay1: 
