@@ -9,28 +9,28 @@ Linker script and memory map
 
 LOAD main.o
 
-.text           0x0000000000000000    0x104a8
+.text           0x0000000000000000    0x104ac
  *(.text*)
- .text          0x0000000000000000    0x104a8 main.o
+ .text          0x0000000000000000    0x104ac main.o
                 0x00000000000100a0                inputRead
                 0x00000000000100c8                app
                 0x00000000000100f4                drawBG
                 0x0000000000010120                drawMaze
 
-.iplt           0x00000000000104a8        0x0
- .iplt          0x00000000000104a8        0x0 main.o
+.iplt           0x00000000000104ac        0x0
+ .iplt          0x00000000000104ac        0x0 main.o
 
-.rela.dyn       0x00000000000104a8        0x0
- .rela.iplt     0x00000000000104a8        0x0 main.o
+.rela.dyn       0x00000000000104b0        0x0
+ .rela.iplt     0x00000000000104b0        0x0 main.o
 
-.data           0x00000000000104a8        0x0
- .data          0x00000000000104a8        0x0 main.o
+.data           0x00000000000104ac        0x0
+ .data          0x00000000000104ac        0x0 main.o
 
-.igot.plt       0x00000000000104a8        0x0
- .igot.plt      0x00000000000104a8        0x0 main.o
+.igot.plt       0x00000000000104b0        0x0
+ .igot.plt      0x00000000000104b0        0x0 main.o
 
-.bss            0x00000000000104a8        0x0
+.bss            0x00000000000104ac        0x0
  *(.bss*)
- .bss           0x00000000000104a8        0x0 main.o
+ .bss           0x00000000000104ac        0x0 main.o
 OUTPUT(main.elf elf64-littleaarch64)
 LOAD linker stubs
