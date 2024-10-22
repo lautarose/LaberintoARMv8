@@ -16,7 +16,10 @@ app:
 	// X0 contiene la dirección base del framebuffer (NO MODIFICAR)
 	// NO MODIFICAR: X20, X21, X22, X23, X24, X25, W21, W26
 
-	
+	mov w26, 0x4
+	bl outputOff  //apago el led verde
+	mov w26, 0x8
+	bl outputOn  //enciendo led rojo
 	
 	// X1 Contiene el tamaño de la pantalla en X.
 	// X2 Contiene el tamaño de la pantalla en Y.
@@ -50,8 +53,8 @@ app:
 
 	// posicion inicial del personaje: X: 326 ; Y: 1
 
-	mov x3, 326 
-	mov x4, 10
+	mov x3, 326
+	mov x4, 1
 
 dibujoPersonaje:
 
@@ -125,6 +128,11 @@ derecha:
 	add x3, x3, 1
 	bl dibujoPersonaje
 
+end:
+	mov w26, 0x8
+	bl outputOff  //apago el led rojo
+	mov w26, 0x4
+	bl outputOn  //enciendo led verde
 
 	// --- Infinite Loop ---	
 InfLoop: 

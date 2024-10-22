@@ -286,5 +286,14 @@ LV17:
   mov x13, 320 // largo de la linea.
   bl pintarVertical
 
+llegada:
+  mov x11, 502
+  mov x12, 464
+  mov x13, 32
+  mov x6, 10 // Grosor de la linea de llegda.
+  mov w27, 0x2702 // Color verde
+  bl pintarVertical
+  
+
 
     br x29 // retorno al main.

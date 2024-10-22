@@ -65,12 +65,6 @@ loop_down:
   b false
 
 check_left:
-
-  // Me aseguro de que x sea distinto de 510.
-
-  cmp x3, 510
-  b.eq true // si es igual a 510 entonces hay colision.
-
   // Calcular posición
   // le resto 1 a X
 
@@ -97,10 +91,14 @@ loop_left:
   b false
 
 check_right:
+  // Me aseguro de que x + tamaño personaje sea distinto de 510.
+  add x11, x3, 20
+  cmp x11, 502
+  b.eq final_laberinto // si es igual a 511 entonces finalizo el laberinto.
+
   // Calcular posición
   // le sumo el tamaño del personaje a X
 
-  add x11, x3, 20 // guardo la posicion en X + 20.
   add x12, x4, 0 // guardo la posicion en Y.
   add x14, x0, 0 // Guardo posicion base del framebuffer en x14
   mov x18, 512
@@ -124,9 +122,14 @@ loop_right:
 true:
   // existe colision.
   mov x10, 1 // retorno en x10 un 1.
+  mov x11, 0 // retorno en x11 un 0.
     br x30
 
 false:
   // no existe colision
-  mov x10, 0 // retorno en x10 un 0.
+  mov x10, 0  // retorno en x10 un 0.
+  mov x11, 0  // retorno en x11 un 0.
     br x30
+
+final_laberinto:
+    b end
