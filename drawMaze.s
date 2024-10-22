@@ -8,7 +8,7 @@
 drawMaze:
   add x29, x30, 0 // guardo el return en x29.
   mov w27, 0xF800 // Color rojo de las lineas del laberinto.
-  mov x20, 16 // Grosor de las lineas del laberinto.
+  mov x6, 16 // Grosor de las lineas del laberinto.
 
 borde_superior:
   mov x11, 0 // posicion inicial en x.

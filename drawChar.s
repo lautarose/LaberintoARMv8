@@ -17,13 +17,13 @@ dibujar_contorno:
   // x11 coordenada en X donde empieza la linea.
   // x12 coordenada en Y donde empieza la linea.
   // x13 Ancho de la línea (hasta donde va).
-  // x20 grosor de la linea
+  // x6 grosor de la linea
 
   mov w27, 0xF99F // color del personaje
   add x11, x3, 0 // posicion en X.
   add x12, x4, 0 // posicion en Y.
   mov x13, 20 // tamaño de la linea
-  mov x20, 20 // grosor de la linea
+  mov x6, 20 // grosor de la linea
 
   bl pintarHorizontal
 
@@ -36,8 +36,8 @@ borrar_personaje:
   add x11, x3, 0 // posicion en X.
   add x12, x4, 0 // posicion en Y.
   mov x13, 20 // tamaño de la linea
-  mov x20, 20 // grosor de la linea
+  mov x6, 20 // grosor de la linea
 
   bl pintarHorizontal
 
-    br x29
+    br x29 // retornar

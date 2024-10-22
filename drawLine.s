@@ -10,7 +10,7 @@
 // x11 coordenada en X donde empieza la linea.
 // x12 coordenada en Y donde empieza la linea.
 // x13 Ancho de la línea (hasta donde va).
-// x20 grosor de la linea
+// x6 grosor de la linea
 
 pintarHorizontal:
   // Calcular posición
@@ -23,7 +23,7 @@ pintarHorizontal:
 
   // Arranco a pintar
 
-  mov x15, x20 // grosor de la linea.
+  mov x15, x6 // grosor de la linea.
 loop_h_x:
   mov x16, x13 // X16 contador en X.
 loop_h:
@@ -60,7 +60,7 @@ pintarVertical:
   add x14, x14, x11 // guardo en x14 la posicion inicial del framebuffer.
 
   // Arranco a pintar
-  mov x18, x20 // grosor de la linea de 16 pixels.
+  mov x18, x6 // grosor de la linea de 16 pixels.
   mov x15, x13 // El largo de la linea.
 loop_v_x:
   mov x16, x18 // contador en X.
