@@ -2,7 +2,7 @@
 app:
 	//---------------- Inicialización GPIO --------------------//
 
-	mov w20, PERIPHERAL_BASE + GPIO_BASE     // Dirección de los GPIO.		
+	mov w20, PERIPHERAL_BASE + GPIO_BASE      // Dirección de los GPIO.		
 	
 	// Configurar GPIOs como input:
 	mov X21,#0
